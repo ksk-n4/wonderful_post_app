@@ -31,22 +31,17 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1
   def update
-    respond_to do |format|
       if @article.update(article_params)
         redirect_to @article, notice: "article was successfully updated."
       else
         render :edit, status: :unprocessable_entity
       end
-    end
   end
 
   # DELETE /articles/1
   def destroy
     @article.destroy
-
-    respond_to do |format|
-      redirect_to articles_path, status: :see_other, notice: "article was successfully destroyed."
-    end
+      redirect_to articles_url, notice: "article was successfully destroyed."
   end
 
   private
