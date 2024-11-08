@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+     <%#------TOPへのリンク設置-------%>
+     <%= link_to "TOP", articles_path  %>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+            <%#------サインアップボタン設置-------%>
+            <%= button_to "サインアップ", 'registrations' %>
+          </li>
+          <li class="nav-item">
+            <%#------ログインボタン設置-------%>
+          </li>
+          <li class="nav-item">
+            <%#------ログアウトボタン設置-------%>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
