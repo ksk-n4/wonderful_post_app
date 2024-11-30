@@ -4,7 +4,11 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all.page(params[:page]).per(10)
+    if params[:title].present?
+      @articles = Article.where('title like ?', "%#{params[:title]}%").page(params[:page]).per(10)
+    else
+      @articles = Article.all.page(params[:page]).per(10)
+    end
   end
 
   # GET /articles/1
