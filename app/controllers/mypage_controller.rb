@@ -1,6 +1,6 @@
 class MypageController < ApplicationController
   # GET /mypage
-  def show
+  def index
     if params[:title].present?
       @articles = current_user.articles.where('title like ?', "%#{params[:title]}%").page(params[:page]).per(10)
     else

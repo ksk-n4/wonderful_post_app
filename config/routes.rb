@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/mypage', to: 'mypage#show'
+  get '/mypage', to: 'mypage#index'
   devise_for :users
   root to: 'articles#index'
   resources :articles
